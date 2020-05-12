@@ -1,7 +1,7 @@
 import { obj } from './index'
 
 
-let sorting = (function() {
+
     let orderByProps = Object.entries;
     
     let keysArr = orderByProps(obj).splice(0, 2);
@@ -10,10 +10,11 @@ let sorting = (function() {
     
     let mainArr = keysArr.concat(otherStuff);
     
+    function sorting() {
     for (let i=0; i<mainArr.length; i++) {
       console.log(`key: ${mainArr[i][0]}, value: ${mainArr[i][1]}`)
     }
-    }())
+    }
 
 
-export default sorting
+export { sorting, orderByProps, keysArr, otherStuff, mainArr }
