@@ -1,12 +1,15 @@
-import { obj } from '../index';
-import { sorting, orderByProps, keysArr, otherStuff, mainArr } from '../sorting';
+import { sorting } from '../sorting';
 
 
 test('Checking', () => {
-    orderByProps;
-    keysArr;
-    otherStuff;
-    mainArr;
-    sorting()
-    expect(obj.attack).toBe(80)
+    const obj = {
+        name: 'мечник', 
+        health: 10, 
+        level: 2, 
+        attack: 80, 
+        defence: 40
+      }
+    sorting(obj)
+    expect(obj.attack).toBe(80);
+    expect(Object.values(obj).includes('мечник')).toBe(true)
 })
